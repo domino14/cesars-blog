@@ -35,7 +35,7 @@ title = "César Del Solar, Maker of Things"
   # it's set to `true` by default
   # oneHeadingSize = false
   disqusShortname = "cesardelsolar"
-   
+
   [[params.ananke_socials]]
     name = "twitter"
     url = "https://twitter.com/14domino"
@@ -43,6 +43,8 @@ title = "César Del Solar, Maker of Things"
     name = "github"
     url = "https://github.com/domino14"
 
+[markup.goldmark.renderer]
+  unsafe = true
 # [languages]
 #   [languages.en]
 #     languageName = "English"
