@@ -1,13 +1,11 @@
 ---
 title: Using NATS to build a very functional Websocket server
-description: >-
-  My new app, Woogles.io, is intended to be a place where people can play
-  real-time word games online. Especially during this pandemic, it…
+summary: How we built the Woogles backend messaging system using NATS and Websockets.
 date: '2020-07-22T05:06:31.568Z'
 categories: []
 keywords: []
-tags: ["devjournal"]
-slug: /@14domino/using-nats-to-build-a-very-functional-websocket-server-8f4de44c3f12
+tags: ["devjournal", "golang"]
+featured_image: 'https://cdn-images-1.medium.com/max/800/1*h3ZgS7RCKyuXEhi_z3uxjg.jpeg'
 ---
 
 My new app (still in internal alpha), Woogles.io, is intended to be a place where people can play real-time word games online. Especially during this pandemic, it appears in-person games of any time have completely ceased, and we board gamers need something to keep us sane. Besides joining like 6 different games in the upcoming [Mind Sports Olympiad](https://msoworld.com/about/), the main way I’ve tried to scratch this itch is to gather a team to code up a way to keep crossword board games alive.

@@ -1,7 +1,9 @@
 ---
 title: "Profiling a Go-language Production Server"
+summary: "A few months ago, I noticed my app was having CPU spikes. Read on to see how I diagnosed the issue on a running production server."
 date: 2022-04-27T23:50:58-04:00
-tags: ["devjournal"]
+tags: ["devjournal", "golang"]
+featured_image: '/images/profiling/callgraph.png'
 ---
 
 A few months ago, I noticed that my open-source crossword board game website [Woogles](https://woogles.io) was having [CPU spikes while running tournaments](https://github.com/domino14/liwords/issues/837). Specifically, at the beginning of every tournament round, the CPU would spike a bit in ECS; memory would also spike, although not as dramatically. The image below shows an example. Notice the periodicity - roughly every 30 minutes, which is around the cadence of most of our tournament rounds.
@@ -161,7 +163,7 @@ Some lessons I learned here:
 
 1. Check my assumptions. I was about to do a complicated refactor and would still have had the same issue.
 
-2. Pay more attention to the diagnostics I've already collected. The fact that the database server was sending so much data, and that the problem was getting worse over time, should have indicated that it had to do with an increasing number of games.
+2. Pay more attention to the diagnostics I've already collected. The fact that the database server was sending so much data, and that the problem was getting worse over time, should have indicated that it had to do with a growing database.
 
 3. Try to run tests on systems that simulate production environments. I should have been able to replicate this issue with my 200-player profiling test if I had loaded a production database dump into my test machine.
 

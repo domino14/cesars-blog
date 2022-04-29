@@ -3,6 +3,7 @@ date = "2020-02-24T01:31:26+00:00"
 draft = false
 tags = ["devjournal"]
 title = "Ideas for improving the state of Scrabble"
+summary = "I have a lot of ideas for improving the state of tournament and recreational Scrabble, mostly revolving around the technological aspect of things. I am aware that there are many other ways in which it is lacking, but my expertise is in technology, and that's probably the best way I can make an impact"
 +++
 I have a lot of ideas for improving the state of tournament and recreational Scrabble, mostly revolving around the technological aspect of things. I am aware that there are many other ways in which it is lacking, but my expertise is in technology, and that's probably the best way I can make an impact.
 

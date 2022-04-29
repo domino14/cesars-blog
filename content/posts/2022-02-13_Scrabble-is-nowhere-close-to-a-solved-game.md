@@ -1,12 +1,12 @@
 ---
 title: Scrabble is nowhere close to a solved game
-description: >-
-  I have found that in the literature about games and AI (artificial
-  intelligence) that Scrabble is invariably referred to as something of a…
+summary: >-
+  I have found that in the literature about games and AI (artificial intelligence) that Scrabble is invariably referred to as something of a “solved” game, in the same way that Chess, Go, etc are “solved” by AI —in these latter games, there exist AIs that have superhuman performance and can basically beat any person.
 date: '2022-02-13T21:28:12.994Z'
 categories: []
 keywords: []
-slug: /@14domino/scrabble-is-nowhere-close-to-a-solved-game-6628ec9f5ab0
+tags: ["scrabble", "ai"]
+featured_image: 'https://cdn-images-1.medium.com/max/800/1*4FpOhu1kenTclX0P69RyrA.png'
 ---
 
 I have found that in the literature about games and AI (artificial intelligence) that Scrabble is invariably referred to as something of a “solved” game, in the same way that Chess, Go, etc are “solved” by AI —in these latter games, there exist AIs that have superhuman performance and can basically beat any person. Even an ML expert like David Silver (from the AlphaGo team that notoriously built the best Go and Chess AIs ever) refers to Scrabble as a game where superhuman performance has already been achieved: [https://www.youtube.com/watch?v=ld28AU7DDB4&t=4m31s](https://www.youtube.com/watch?v=ld28AU7DDB4&t=4m31s)

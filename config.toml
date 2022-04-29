@@ -3,6 +3,7 @@ languageCode = "en-us"
 theme = ["github.com/theNewDynamic/gohugo-theme-ananke"]
 paginate = 10
 title = "César Del Solar, Maker of Things"
+disqusShortname = "cesardelsolar"
 
 [params]
   # dir name of your main content (default is `content/posts`).
@@ -34,7 +35,6 @@ title = "César Del Solar, Maker of Things"
   # set all headings to their default size (depending on browser settings)
   # it's set to `true` by default
   # oneHeadingSize = false
-  disqusShortname = "cesardelsolar"
 
   [[params.ananke_socials]]
     name = "twitter"

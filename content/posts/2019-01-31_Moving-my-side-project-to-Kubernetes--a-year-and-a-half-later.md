@@ -6,9 +6,7 @@ description: >-
 date: '2019-01-31T01:54:09.309Z'
 categories: []
 keywords: []
-tags: ["devjournal"]
-slug: >-
-  /@14domino/moving-my-side-project-to-kubernetes-a-year-and-a-half-later-82e7c96e0f09
+tags: ["devjournal", "kubernetes"]
 ---
 
 Around April of 2017 I wrote this article about moving my side project to a single-node Kubernetes cluster: [https://hackernoon.com/lessons-learned-from-moving-my-side-project-to-kubernetes-c28161a16c69](https://hackernoon.com/lessons-learned-from-moving-my-side-project-to-kubernetes-c28161a16c69)

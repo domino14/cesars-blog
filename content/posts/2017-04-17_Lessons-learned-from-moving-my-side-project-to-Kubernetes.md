@@ -6,8 +6,7 @@ description: >-
 date: '2017-04-17T03:31:45.119Z'
 categories: []
 keywords: []
-slug: >-
-  /@14domino/lessons-learned-from-moving-my-side-project-to-kubernetes-c28161a16c69
+tags: ["kubernetes"]
 ---
 
 This title may already be ringing some faint alarm bells; why move a small side project to use Kubernetes? And was it worth it?
@@ -93,7 +92,7 @@ So there I am about to deploy my project to production when Kubernetes 1.6.0 dec
 
 I was able to piece together some additions to my ingress controller based on a couple of Github issues and some reading of the documentation. For a while I got very discouraged and almost went back to reinventing the wheel, or even scrapping Docker altogether and going back to `git pull && kill -HUP <gunicorn PID>` before I remembered that I am obstinate and that the Sunk Cost Fallacy is a real thing. Anyway, here are my changes:
 
-[**domino14/Webolith**  
+[**domino14/Webolith**
 _Webolith - Aerolith 2.0 - Aerolith for the web. A word study site - study for Scrabble, Boggle, Words With Frentz, etc._github.com](https://github.com/domino14/Webolith/blob/master/kubernetes/deploy-configs/nginx-ingress-rc.yaml "https://github.com/domino14/Webolith/blob/master/kubernetes/deploy-configs/nginx-ingress-rc.yaml")[](https://github.com/domino14/Webolith/blob/master/kubernetes/deploy-configs/nginx-ingress-rc.yaml)
 
 Note all the RBAC (Role-Based Access Control) stuff early on. Hopefully the projects will update their documentation.

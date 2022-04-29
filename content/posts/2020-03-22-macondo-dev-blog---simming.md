@@ -1,7 +1,7 @@
 +++
 date = "2020-03-22T03:03:31+00:00"
 draft = false
-tags = ["scrabble ai golang machinelearning devjournal"]
+tags = ["scrabble", "ai", "golang", "machinelearning", "devjournal"]
 title = "Macondo Dev Blog - simming"
 +++
 I'm going to log more of my progress on the apps that I wrote about in an earlier post, in an attempt to:
