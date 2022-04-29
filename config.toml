@@ -35,6 +35,7 @@ disqusShortname = "cesardelsolar"
   # set all headings to their default size (depending on browser settings)
   # it's set to `true` by default
   # oneHeadingSize = false
+  favicon = "/images/favicon.ico"
 
   [[params.ananke_socials]]
     name = "twitter"
