@@ -104,7 +104,7 @@ Max error: 2.000000
 
 Yes, 2. It's supposed to be zero. I believe at some point when messing with and installing/uninstalling different versions of drivers, I also got `1.000000` and even `0.000000`. Wtf? This might actually be the biggest issue once I try to do machine learning stuff again. Anyone have any ideas what is happening here?
 
-My plan when I try this again will be to just uninstall and reinstall everything and see if that does it.
+My plan when I try this again will be to just uninstall and reinstall everything NVIDIA-related and see if that does it.
 
 I'd love to help _fix_ these bugs but the process of developing Linux for right now is very daunting to me. I wonder if I could figure it out.
 
