@@ -4,6 +4,7 @@ theme = ["github.com/theNewDynamic/gohugo-theme-ananke"]
 paginate = 10
 title = "César Del Solar, Maker of Things"
 disqusShortname = "https-www-cesardelsolar-com"
+enableRobotsTXT = true
 
 [params]
   # dir name of your main content (default is `content/posts`).
