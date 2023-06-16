@@ -166,6 +166,21 @@ at least for me.
 
 Additionally, I rewrote it to just return the value of the node, and not the move itself. This simplifies things a bit and there's no need to pass around pointers to moves.
 
+### Aspiration windows
+
+Sometimes, it may be valuable to know whether an endgame is winnable at all. It can often be a much faster search than to actually find the best win. This can be used if you want
+to shorten search time; a future pre-endgame engine can also use this to rapidly solve the endgame for the sole purposes of counting it as a win or loss.
+
+In order to do this, we can use an "[aspiration window](https://www.chessprogramming.org/Aspiration_Windows)", where we shorten the initial alpha-beta search window drastically. Setting this window to [-1, 1] based on a setting will result
+in solutions being clamped to this value. (Note: this works if our negamax is minimaxing on the current score difference between players; you can center the minimal window around other
+values otherwise). If we can't find anything better than 0, that's at best a tie. -1 or worse is a loss. Anything else is a guaranteed win.
+
+Because of the way this works, it will often find solutions that just barely win. This is fine, but an interesting quirk of the algorithm -- you better not make any mistakes if you
+follow this line! Similarly, if it can't win, it will find slightly wrong sequences that appear to almost win. This is OK - this mode should only be used if we're quickly trying to find a win.
+
+Aspiration windows can also be used to speed up the algorithm in general by keeping track of whether we fail high or low, and then widening/redoing the search, but I haven't implemented
+this yet. The only reason aspiration windows are used in Macondo is to quickly get that binary "is there a win or not" in this endgame.
+
 ### Principal variation on stack
 
 Since the move is now no longer included in the return value of the negamax call, the principal variation (winning sequence of moves) is harder to build up. I implemented [a technique used by the Blunder chess engine](https://github.com/algerbrex/blunder/blob/main/engine/search.go#L92) to keep track of the principal variation as we iterate through the search function. There are other solutions, such as triangular PV tables, or even just looking up the PV in the transposition table (more below). 
@@ -193,7 +208,7 @@ As a side note, I am often struck by how computationally difficult Scrabble is w
 
 #### What value to store in the table?
 
-Transposition tables at first did not seem to work properly. After a lot of debugging and help from an awesome programming community on Discord, I was able to figure out that the way I had implemented negamax made the current score spread a part of the position. That is, the Zobrist hash needed to have the current spread built into it. This is unideal for several reasons:
+Transposition tables at first did not seem to work properly. After a lot of debugging and help from an awesome programming community on [Discord](https://discord.gg/ghBFYBWTWA), I was able to figure out that the way I had implemented negamax made the current score spread a part of the position. That is, the Zobrist hash needed to have the current spread built into it. This is unideal for several reasons:
 
 - Need a Zobrist or other hashing scheme for the score
 - Many more Transposition Table misses - two positions that have the same racks, board positions, and player-on-turn should share a single item on the table, but they didn't for me.
