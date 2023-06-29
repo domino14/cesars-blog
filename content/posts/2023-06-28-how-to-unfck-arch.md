@@ -11,7 +11,7 @@ intent clearer:
 
 Arch is pretty sweet. But to be honest, I've always been the type of nerd who likes building stuff more than fighting with my OS/code/etc etc. So I always choose simple things: Golang, Mac OS, etc. But when I [built my own computer](/posts/2022-05-13-linux-on-desktop/), I finally was able to get everything the way I wanted to: a very fast coding environment where I can still watch Netflix or whatever once in a while, and stream Scrabble tournaments/coding with OBS. I scratch my gaming itch with the Switch most of the times.
 
-That is, until Ubuntu broke again. I don't know what it is about me and Ubuntu. I literally have never been able to update Ubuntu without my computer becoming unbootable. Never. It must be because I like installing extra packages here and there and something just must not be compatible. I think it had to do with my NVIDIA graphics card driver or who knows.
+That is, until Ubuntu broke again. I don't know what it is about me and Ubuntu. I literally have never been able to upgrade to the next Ubuntu version without my computer becoming unbootable. Never. It must be because I like installing extra packages here and there and something just must not be compatible. I think it had to do with my NVIDIA graphics card driver or who knows.
 
 And then I saw the light. The wonder that is Arch Linux. And I've been a very happy Arch user for about a year now.
 
