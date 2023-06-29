@@ -21,11 +21,17 @@ First, some notes on programs and how stuff can break:
 
 ### Pacman
 
-Run `pacman -Syu` every few days. And **pay attention to what it says**. If there is an error, if it's not able to update the Linux kernel or the initial ramdisk environment, your system will break next time you reboot. Many long-bearded Arch users will figure out what to do before it even boots (for example, they know the magic incantation `mkinitcpio -p`) and they won't mess up their systems like the newb that I am. 
+Run `pacman -Syu` every few days. This is how you upgrade your system. And **pay attention to what it says**. If there is an error, if it's not able to update the Linux kernel or the initial ramdisk environment, your system will break next time you reboot. Many long-bearded Arch users will figure out what to do before it even boots (for example, they know the magic incantation `mkinitcpio -p`) and they won't mess up their systems like the newb that I am. 
 
 ### Yay
 
 Don't use `yay`. It just does too many things behind the scenes. Just take the time to figure out how to install from the AUR yourself; clone the packages, do a `makepkg -si` or whatever. You get more power this way. 
+
+### Rebooting
+
+Arch isn't the type of system you should just keep up for 200 days. You should reboot relatively often. Definitely every time the `linux` kernel updates, but probably for other reasons too. If the kernel updates, for example, your OBS plugins or your USB camera or whatever might stop working, because the USB modules are new. Just like you'd reboot your Windows/Mac computer if the kernel/OS updated, you should do the same for Arch.
+
+Of course, Arch doesn't make you do anything. Things will just not be optimal if you're changing major parts of the system without rebooting.
 
 ### My last few Arch breakages:
 
