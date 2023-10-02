@@ -2,6 +2,7 @@
 title: "How to unf*ck Arch Linux"
 date: 2023-06-28
 tags: ["linux", "arch"]
+summary: Arch Linux is the main system on my desktop computer. I love it but sometimes it screws up. Here are some tricks for unscrewing it up.
 ---
 
 Did I tell you all that I run Arch Linux? The following cartoon should make my
