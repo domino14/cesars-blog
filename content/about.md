@@ -10,7 +10,7 @@ menu:
 
 César fell in love with technology at the tender age of 8, while a child in his native Caracas, Venezuela. His older brother had a Casio calculator and through trial and error, César figured out how to program it to play a simple number guessing game. He also ended up draining his brother's calculator battery before a big test, much to his brother's dismay.
 
-César fell in love again in a different way many years later, and he currently lives in New Jersey with his beautiful wife and most amazing little boy in the world.
+César fell in love again in a different way many years later, and he currently lives in New Jersey with his beautiful wife and most amazing little boy and baby girl in the world.
 
 ![](/images/babybun.jpg)
 

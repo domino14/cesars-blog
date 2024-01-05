@@ -5,8 +5,8 @@ tags: ["linux", "arch"]
 summary: Arch Linux is the main system on my desktop computer. I love it but sometimes it screws up. Here are some tricks for unscrewing it up.
 ---
 
-Did I tell you all that I run Arch Linux? The following cartoon should make my
-intent clearer:
+Did I tell you all that I run Arch Linux? The following cartoon should make the
+connotation clearer:
 
 ![](https://i.kym-cdn.com/photos/images/newsfeed/002/243/374/ae2.jpg)
 
@@ -16,17 +16,17 @@ That is, until Ubuntu broke again. I don't know what it is about me and Ubuntu. 
 
 And then I saw the light. The wonder that is Arch Linux. And I've been a very happy Arch user for about a year now.
 
-HOWEVER! Arch Linux also breaks sometimes! What is the difference, you're asking? There is something about Arch where it always becomes possible to restore your system. If you broke Arch, it's pretty much always something you did wrong, but instead of trying to debug Ubuntu install scripts or whatever, Arch, as a "rolling upgrade" type of system makes it possible to figure out what went wrong on the last update. 
+HOWEVER! Arch Linux also breaks sometimes! What is the difference, you're asking? There is something about Arch where it always becomes possible to restore your system. If you broke Arch, it's pretty much always something you did wrong, but instead of trying to debug Ubuntu install scripts or whatever, Arch, as a "rolling upgrade" type of system makes it possible to figure out what went wrong on the last update.
 
 First, some notes on programs and how stuff can break:
 
 ### Pacman
 
-Run `pacman -Syu` every few days. This is how you upgrade your system. And **pay attention to what it says**. If there is an error, if it's not able to update the Linux kernel or the initial ramdisk environment, your system will break next time you reboot. Many long-bearded Arch users will figure out what to do before it even boots (for example, they know the magic incantation `mkinitcpio -p`) and they won't mess up their systems like the newb that I am. 
+Run `pacman -Syu` every few days. This is how you upgrade your system. And **pay attention to what it says**. If there is an error, if it's not able to update the Linux kernel or the initial ramdisk environment, your system will break next time you reboot. Many long-bearded Arch users will figure out what to do before it even boots (for example, they know the magic incantation `mkinitcpio -p`) and they won't mess up their systems like the newb that I am.
 
 ### Yay
 
-Don't use `yay`. It just does too many things behind the scenes. Just take the time to figure out how to install from the AUR yourself; clone the packages, do a `makepkg -si` or whatever. You get more power this way. 
+Don't use `yay`. It just does too many things behind the scenes. Just take the time to figure out how to install from the AUR yourself; clone the packages, do a `makepkg -si` or whatever. You get more power this way.
 
 ### Rebooting
 
@@ -52,7 +52,7 @@ Of course, Arch doesn't make you do anything. Things will just not be optimal if
 
 ```
 NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
-nvme0n1     259:0    0 931.5G  0 disk 
+nvme0n1     259:0    0 931.5G  0 disk
 ├─nvme0n1p1 259:1    0   512M  0 part /boot
 └─nvme0n1p2 259:2    0   931G  0 part /
 ```
