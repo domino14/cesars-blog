@@ -14,6 +14,6 @@ César fell in love again in a different way many years later, and he currently 
 
 ![](/images/babybun.jpg)
 
-César was a late co-founder at a YCombinator startup (Leftronic, S2010), which was acquired in 2014 by AppDirect. He currently works at Pindrop as a senior software architect, and in his spare time dabbles in Scrabble-related side projects (See [Woogles](https://woogles.io), [Aerolith](https://aerolith.org), and [Macondo](https://domino14.github.io/macondo)). You can catch him streaming coding and Scrabble sometimes on [Twitch](https://twitch.tv/14domino).
+César was a late co-founder at a YCombinator startup (Leftronic, S2010), which was acquired in 2014 by AppDirect. He currently works as CTO of a startup in the dev tools space (CodeComet). In his spare time, he dabbles in Scrabble-related side projects (See [Woogles](https://woogles.io), [Aerolith](https://aerolith.org), and [Macondo](https://domino14.github.io/macondo)). You can catch him streaming coding and Scrabble sometimes on [Twitch](https://twitch.tv/14domino).
 
 Send César an email at delsolar @ the biggest email host in the world (Google's).
