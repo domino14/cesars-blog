@@ -1,10 +1,16 @@
 baseurl = "https://www.cesardelsolar.com"
 languageCode = "en-us"
 theme = ["github.com/theNewDynamic/gohugo-theme-ananke"]
-paginate = 10
+paginate = 9
 title = "César Del Solar, Maker of Things"
 disqusShortname = "https-www-cesardelsolar-com"
 enableRobotsTXT = true
+enableGitInfo = true
+
+[sitemap]
+changefreq = "monthly"
+priority = 0.5
+filename = "sitemap.xml"
 
 [params]
   # dir name of your main content (default is `content/posts`).
@@ -30,47 +36,15 @@ enableRobotsTXT = true
   # set post to show the last updated
   # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
   showLastUpdated = false
-  # Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author
-  # updatedDatePrefix = "Updated"
 
   # set all headings to their default size (depending on browser settings)
   # it's set to `true` by default
   # oneHeadingSize = false
   favicon = "/images/favicon.ico"
 
-  [[params.ananke_socials]]
-    name = "twitter"
-    url = "https://twitter.com/14domino"
-  [[params.ananke_socials]]
+[[params.ananke_socials]]
     name = "github"
     url = "https://github.com/domino14"
 
 [markup.goldmark.renderer]
   unsafe = true
-# [languages]
-#   [languages.en]
-#     languageName = "English"
-#     title = "César Del Solar"
-#     subtitle = "Maker of things"
-#     owner = ""
-#     keywords = ""
-#     copyright = "César Del Solar"
-#     menuMore = "Show more"
-#     readMore = "Read more"
-#     readOtherPosts = "Read other posts"
-#     missingContentMessage = "Page not found..."
-#     missingBackButtonLabel = "Back to home page"
-
-#     [languages.en.params.logo]
-#       logoText = "Terminal"
-#       logoHomeLink = "/"
-
-#     [languages.en.menu]
-#       [[languages.en.menu.main]]
-#         identifier = "about"
-#         name = "About"
-#         url = "/about"
-#       [[languages.en.menu.main]]
-#         identifier = "showcase"
-#         name = "Showcase"
-#         url = "/showcase"
