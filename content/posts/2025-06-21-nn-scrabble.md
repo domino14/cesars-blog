@@ -343,7 +343,7 @@ If this was an intermediate position that was reached by a Monte Carlo simulatio
 
 ![](/images/nn-pos-2.png)
 
-In this late game position, we are down 383-428 and the bag has just 14 tiles in it. The static evaluator prefers the play `13A BONED`, making ODE and FED vertically. This isn't a great play; it blocks a weak bingo lane making HOOF/LOOF/yOOF, and it leaves the Q on our rack without a good place to put it. Our opponent's next play will likely involve playing in the bottom right quadrant, trying to mess up the WAGE hook and shutting down the board. We're often not in a good position to win this game after BONED, despite its high score.
+In this late game position, we are down 383-428 and the bag has just 14 tiles in it. The static evaluator prefers the play `13A BONED`, making ODE and FED vertically. This isn't a great play; it blocks a weak bingo lane making a whole bunch of _OOF plays (HOOF/LOOF/ROOF/WOOF/etc), and it leaves the Q on our rack without a good place to put it. Our opponent's next play will likely involve playing in the bottom right quadrant, trying to mess up the WAGE hook and shutting down the board. We're often not in a good position to win this game after BONED, despite its high score.
 
 The neural network picks the BestBot-preferred play here, G11 Q(U)OD, through the U in DEPURATES, even though it ranks #13 in the list of static plays. It sheds the bad Q, turns over a couple more tiles for the blank, sets up a hard-to-block, somewhat desperate lane for an S or blank that we don't yet have -- but it's ok to do this when we're in this position, where we're in trouble! This would leave the opponent several annoying bingo lanes to deal with. It's great that it figured this out.
 
