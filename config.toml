@@ -1,7 +1,5 @@
 baseurl = "https://www.cesardelsolar.com"
 languageCode = "en-us"
-theme = ["github.com/theNewDynamic/gohugo-theme-ananke"]
-paginate = 9
 title = "César Del Solar, Maker of Things"
 disqusShortname = "https-www-cesardelsolar-com"
 enableRobotsTXT = true
@@ -11,6 +9,9 @@ enableGitInfo = true
 changefreq = "monthly"
 priority = 0.5
 filename = "sitemap.xml"
+
+[pagination]
+  pagerSize = 9
 
 [params]
   # dir name of your main content (default is `content/posts`).
@@ -42,9 +43,16 @@ filename = "sitemap.xml"
   # oneHeadingSize = false
   favicon = "/images/favicon.ico"
 
-[[params.ananke_socials]]
+[[params.social]]
     name = "github"
     url = "https://github.com/domino14"
 
 [markup.goldmark.renderer]
   unsafe = true
+
+[module]
+[[module.imports]]
+  disable = false
+  ignoreConfig = false
+  ignoreImports = false
+  path = 'github.com/theNewDynamic/gohugo-theme-ananke/v2'
