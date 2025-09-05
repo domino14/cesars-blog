@@ -236,11 +236,39 @@ My opponent just bingoed with TUNDRAS. I need to win this game to cash. Why does
 
 ### Position 15 vs Sam Kaplan
 
-Finally, our final position.
+Finally, our final position where I ask for help.
 
 {{< woogles discussion_link="https://woogles.io/anno/m5JjzYyBVEsMVvMFs8QAqz?collection=9c107ced-3e8b-46e5-83b6-873f0342e1d8&chapter=31&total=31&turn=7&comments=6" include_link=true width="75%" >}}
 
 What do I do after a play like WADI? He didn't seem super happy to be playing it, and it didn't scream a strong leave. I kinda had a focus lapse and decided to just play VEGA, I'm not going to cash anyway and it looks best. To a leave of EEI however he drew DEIFIES and after a few more turns I've basically lost the game.
+
+## OK fine, things I did right.
+
+I should probably have a few plays that I liked here so that it's not all negative. After all, I am a 2000 player. (Right?)
+
+{{< woogles discussion_link="https://woogles.io/anno/APrsP7BxUaHefqLLYZZeQf?collection=9c107ced-3e8b-46e5-83b6-873f0342e1d8&chapter=18&total=31&turn=18&comments=17" include_link=true width="75%" >}}
+
+The bag is `D EEE K N O R TT U V`
+
+I played L3 OA(R) here to give me a shot at (D)IsQUIET to probably win the game. I don't think QAT can win here, and I might get two shots to fish.
+
+I did get two shots, and I didn't draw it, but, that's all right.
+
+{{< woogles discussion_link="https://woogles.io/anno/jopyUovvRkxBDRSrTLjQXE?collection=9c107ced-3e8b-46e5-83b6-873f0342e1d8&chapter=21&total=31&turn=8&comments=7" include_link=true width="75%" >}}
+
+Before our game, Rafi was distraught and told me he had just lost 6 in a row. So of course, I knew he would win this game, and he promptly started with two bingos, and then drew both blanks and bingoed two more times. Still, I am proud that I wasn't tilting and found the best play of (E)YEL(I)NERS here.
+
+{{< woogles discussion_link="https://woogles.io/anno/QX5EkBUxnyJZeQVjRwwEfY?collection=9c107ced-3e8b-46e5-83b6-873f0342e1d8&chapter=22&total=31&turn=19&comments=18" include_link=true width="75%" >}}
+
+In the position above, the bag is `? A DD F G I L NNN OOO S VV Y`. I played GE(MO)TE, which I am happy I came up with under time pressure. Anything I do that does not open a lane right now is an immediate loss, and here I'm just hoping he doesn't have the A. In the end, I was too slow this game and ran out of time and lost a sure win, but that's okay.
+
+{{< woogles discussion_link="https://woogles.io/anno/HKLYtPfV9UNS9Brcdtk8jM?collection=9c107ced-3e8b-46e5-83b6-873f0342e1d8&chapter=28&total=31&turn=22&comments=21" include_link=true width="75%" >}}
+
+I played (RITZ)INESS here. Kind of a cool play I guess.
+
+{{< woogles discussion_link="https://woogles.io/anno/fQu36ePMzWqmTkaXMBn7an?collection=9c107ced-3e8b-46e5-83b6-873f0342e1d8&chapter=19&total=31&turn=25&comments=24" include_link=true width="75%" >}}
+
+In this position, the bag is `G I MM OO S T U` and he just played (A)RO. I was extremely low on time, but ended up playing N9 ROT(O), blocking GOMUTIS (which he had) and setting up my case E.
 
 ## Thanks
 
