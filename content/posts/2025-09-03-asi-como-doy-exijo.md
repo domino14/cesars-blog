@@ -3,6 +3,7 @@ title: "Why I didn't win the 2025 Scrabble Players Championship"
 date: 2025-09-03
 tags: ["scrabble", "spc", "tournaments"]
 summary: A tournament report for the most prestigious NWL tournament of the year - the SPC 2025. Lessons learned and so forth, as well as a shameful (or shameless?) request for help.
+featured_image: '/images/spc2025/buns.jpg'
 
 ---
 
