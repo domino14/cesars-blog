@@ -1,0 +1,32 @@
+{{- $discussionLink := .Get "discussion_link" -}}
+{{- $includeLink := .Get "include_link" | default false -}}
+{{- $width := .Get "width" | default "100%" -}}
+
+{{- if $discussionLink -}}
+  {{- $gameIdPattern := `https://woogles\.io/anno/([^?]+)` -}}
+  {{- $turnPattern := `turn=(\d+)` -}}
+  
+  {{- $gameIdMatch := findRE $gameIdPattern $discussionLink 1 -}}
+  {{- $turnMatch := findRE $turnPattern $discussionLink 1 -}}
+  
+  {{- if and $gameIdMatch $turnMatch -}}
+    {{- $gameId := replaceRE $gameIdPattern "$1" (index $gameIdMatch 0) -}}
+    {{- $turnStr := replaceRE $turnPattern "$1" (index $turnMatch 0) -}}
+    {{- $turn := int $turnStr -}}
+    {{- $imageTurn := sub $turn 1 -}}
+    {{- $imageUrl := printf "https://woogles.io/gameimg/%s-v2-%d.png" $gameId $imageTurn -}}
+    
+    <div style="display: inline-block; width: {{ $width }}; max-width: 100%;">
+      <div class="woogles-embed" style="border: 1px solid #e1e4e8; border-radius: 8px; padding: 16px; margin: 20px 0; background-color: #f6f8fa; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);">
+        <img src="{{ $imageUrl }}" alt="Woogles game position at turn {{ $turn }}" style="width: 100%; height: auto; display: block; border-radius: 4px;" />
+        {{- if $includeLink -}}
+          <p style="margin: 12px 0 0 0; text-align: center;"><a href="{{ $discussionLink }}" target="_blank" rel="noopener" style="color: #0366d6; text-decoration: none; font-weight: 500;">Discuss on Woogles.io →</a></p>
+        {{- end -}}
+      </div>
+    </div>
+  {{- else -}}
+    <p class="error">Error: Could not parse Woogles discussion link</p>
+  {{- end -}}
+{{- else -}}
+  <p class="error">Error: discussion_link parameter is required</p>
+{{- end -}}
