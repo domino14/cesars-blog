@@ -10,6 +10,8 @@ At the 2018 National Scrabble Championship in Buffalo, NY, the GOAT of all time 
 
 After a minute or so, Nigel plays -OQ (exchange OQ) and one of the commentators gasps audibly. You can see the moment in this video on YouTube: https://youtu.be/xll4R_C6h-w?si=2wubjJGXBNMXUvBT&t=135
 
+(By the way: Joel Sherman ended up winning the championship, taking all three games. Amazing feats of inference from Nigel notwithstanding.)
+
 > **Key Takeaways**
 > - QAT is the best play without inference; -OQ rises to #1 when Nigel correctly infers Joel's strong leave
 > - Macondo's new Bayesian inference engine replicates this kind of rack-reading, achieving 51.9% ± 0.8% vs BestBot (NWL23)
@@ -396,6 +398,10 @@ We're still searching for the optimal τ. It likely varies by opponent – a pla
 Morris Greenberg suggested several promising directions for a more systematic τ search. The approach we've used so far is a coarse manual sweep; Morris proposed a proper grid search with finer resolution, evaluating each candidate τ on a held-out set of games to avoid overfitting to the BestBot matchup specifically. He also suggested a 2D search over τ and the mini-sim iteration count together, since the two parameters interact: a lower τ (sharper posterior) only works well if the mini-sims are precise enough to rank moves reliably, and cheap mini-sims may need a more forgiving τ to compensate for their noise. These ideas will shape the next round of experiments.
 
 Increasing the number of iterations per mini-sim can only help, too, as well as increasing their plies and number of considered plays. However, this can also result in a prohibitively slow bot!
+
+One idea we haven't implemented yet is **sequential inference** - carrying the posterior forward across turns. Right now, each turn's inference starts fresh: we compute P(leave | play) from scratch using the flat hypergeometric prior, as if we'd never seen the opponent before. But that throws away information. If you inferred on turn 3 that your opponent is very likely holding an S and a blank, and they only played two tiles on turn 4, some of those tiles are probably still on their rack. The turn-3 posterior should be informing the turn-4 prior.
+
+Concretely: after the opponent plays K tiles on turn N, their rack for turn N+1 consists of their turn-N leave (which you just inferred) plus K newly drawn tiles from the bag. So the prior for turn N+1 isn't the flat bag distribution - it's the convolution of your turn-N posterior over leaves with the hypergeometric draw distribution for those K new tiles. In principle this is straightforward Bayesian updating; in practice the posterior is a distribution over thousands of possible leaves and computing the convolution efficiently is non-trivial. But it's the right thing to do, and the information gain should compound over time, especially in games where the opponent plays conservatively and carries similar tiles across multiple turns.
 
 In the coming weeks, BestBot on Woogles will be updated to run inference. This should make it a more formidable opponent – and, perhaps more importantly, a more human-like one. A bot that actually thinks about what you're holding is a bot that plays the way the best humans play. (It might also be more fun to play against!)
 
