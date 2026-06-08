@@ -1,9 +1,9 @@
 ---
 title: "Bayesian Rack Inference in Macondo: Teaching a Scrabble Bot to Read Minds"
-date: 2026-04-26
+date: 2026-06-07
 tags: ["macondo", "scrabble", "AI", "bayesian", "machine learning", "statistics"]
 summary: "How we implemented mathematically rigorous Bayesian inference in Macondo to let BestBot reason about its opponent's rack, and why it only barely edges out going first."
-featured_image: '/images/nigel-bayes.jpg'
+featured_image: '/images/inference/nigel-bayes.jpg'
 ---
 
 At the 2018 National Scrabble Championship in Buffalo, NY, the GOAT of all time Nigel Richards was playing against another top player and grandmaster Joel Sherman in a de-facto three-game finals for the $10K top prize. Joel needed to beat him 3 in a row to win the whole thing. In the second game (Joel won the first one), Joel opened with the rack of AENSTUU. He thought briefly before exchanging UU, his best play. Nigel had the rack AELNOQT and the commentators stated the obvious - play QAT for 24 points. There was no question in anyone's mind about this basically automatic play.
@@ -18,7 +18,7 @@ After a minute or so, Nigel plays -OQ (exchange OQ) and one of the commentators 
 > - Knowing your opponent's exact leave each turn only yields 53.3% (NWL23) - barely above Bayesian inference at 51.9%
 > - Even knowing your opponent's full rack each turn (full-rack oracle, CSW24) only gets you to ~62%, lower than most players expect
 
-![Scrabble board tiles showing the AELNOQT rack and a game in progress](/images/aelnoqt.png)
+![Scrabble board tiles showing the AELNOQT rack and a game in progress](/images/inference/aelnoqt.png)
 
 ## What Nigel Knew
 
@@ -375,7 +375,7 @@ This doesn't mean inference is useless – 52% vs 50% is a real edge, and in tou
 When you have a continuous parameter like τ, the natural expectation is a smooth response curve: performance rises as τ approaches the optimum, peaks, then falls off the other side. Tune τ too low and the model is overconfident; too high and it becomes too permissive. You'd draw a hill. That's not what we found.
 
 <figure>
-<img src="/images/winrate_vs_tau.png" alt="Win rate vs tau with 95% confidence interval error bars: only tau=0.05 is significant at 51.89% (4.85 sigma); all other tau values straddle the 50% break-even line; oracle ceiling at 53.34%." style="max-width: 100%; height: auto;">
+<img src="/images/inference/winrate_vs_tau.png" alt="Win rate vs tau with 95% confidence interval error bars: only tau=0.05 is significant at 51.89% (4.85 sigma); all other tau values straddle the 50% break-even line; oracle ceiling at 53.34%." style="max-width: 100%; height: auto;">
 <figcaption>SimmingInferBot win rate vs. BestBot across τ values, with 95% CI error bars (10,000+ games each). Only τ = 0.05 (red) clears statistical significance: 51.89%, a 4.85σ effect. Every other value tested is indistinguishable from a coin flip. Oracle ceiling (53.34%) shown for reference.</figcaption>
 </figure>
 
@@ -418,6 +418,105 @@ But, we all know it has its disadvantages - mostly around the fact that it uses 
 
 ---
 
+## Examples
+
+Here are a few interesting positions where simmed inference gives some good results. Nigel is far from the other player who can do setups, although his are often known to be legendary. For more on these plays you can watch Will Anderson's videos [Volume 1](https://www.youtube.com/watch?v=H-gttyP64nM) and [Volume 2](https://www.youtube.com/watch?v=Mm6OiGPRHyA).
+### Position 1
+
+![](/images/inference/infer-1-example.png)
+
+In the above position, Nigel has just played the stunning N12 O(R)A holding ADIOQ. This was round 4 of the 2010 Causeway Challenge vs. Marty Gabriel, played with the CSW07 lexicon. He is setting up 15L QADI for 77 pts!
+
+The results show:
+
+```
+Way more than chance:
+ D  I  Q
+
+More than chance:
+ A  L  N
+```
+
+With every other letter being way less than chance or impossible. The sim engine thinks Marty should block with O14 RE at all costs, even though that would normally be a pretty bad move. It's that desperate.
+
+### Position 2
+
+![](/images/inference/infer-2-example.png)
+
+Inference works in other languages too. The above position happened between Khan Nguyen and Sebastian Herzog. Khan is the 2025 National Scrabble Champion in German. His last move is 11L (E)R for just two points.
+
+Khan is setting up a big parallel play making ÖL to try to steal this game; the `Ö` is worth 8 points so this can easily be a 50+ point play.
+
+The inference shows this:
+
+```
+Way more than chance:
+ Ö
+
+More than chance:
+ L
+
+Slightly more than chance:
+ D  R
+
+About as expected:
+ T
+
+Slightly less than chance:
+ J  S  U
+
+Less than chance:
+ Ä  E
+```
+Indeed, Khan kept `DEÖRTU`, trying to set up ÖL/ERDE. (Note that ERLE is also a word in German).
+
+With this inference Macondo suggests that Sebastian should play K9 A(N)D to block the huge hotspot.
+
+### Position 3
+
+![](/images/inference/infer-3-example.png)
+
+
+This game took place during Round 8 of the 2019 National Scrabble Championship in Reno, NV. Josh Sokol played AC(E)TA in the above position vs Will Anderson, setting up a huge Z spot in two different places. Beautiful! He kept ZIT on his rack.
+
+```
+Way more than chance:
+ A  Q  Z
+
+More than chance:
+ C  D  T
+
+Slightly more than chance:
+
+
+About as expected:
+ E  W
+```
+
+Imagine that we did not sim using inferences. In this case, the simulator thinks that Will should play J10 FOU keeping AENO for 27 points.
+
+```
+Play                Leave         Score    Win%            Equity
+J10 FOU             AENO          27       59.21±0.76      -23.59±1.77
+J10 FOO             AENU          27       58.35±0.78      -25.64±1.78
+ J4 OOF             AENU          27       57.99±0.78      -26.37±1.79
+ J4 OAF             ENOU          27       56.84±0.82      -29.07±1.87     ❌
+```
+
+However, **simming with inferences on** immediately makes I6 UN(R)OOF jump to the top!
+
+```
+Play                Leave         Score    Win%            Equity
+ I6 UN(R)OOF        AE            11       54.81±0.92      -34.12±2.03
+J10 FOO             AENU          27       52.06±1.03      -39.76±2.33     ❌
+J10 FOU             AENO          27       52.05±1.04      -39.87±2.30     ❌
+ J4 OOF             AENU          27       50.81±1.51      -42.76±3.36     ❌
+```
+
+UN(R)OOF scores very little and keeps a mediocre leave, but it blocks both Z spots. It should definitely be played here.
+
+---
+
 ## Frequently Asked Questions
 
 **What is rack inference in Scrabble?**
@@ -448,7 +547,7 @@ Clone [Macondo on GitHub](https://github.com/domino14/macondo) and use the `auto
 
 ## Conclusion
 
-The soulread fantasy doesn't quite survive contact with the bag. Rack inference helps - ~52% is a real edge - but knowing your opponent's leave every single turn only gets you to 53.3%. Going first beats that. Going first beats perfect leave information. That took a while to sit with.
+The soulread fantasy doesn't quite survive contact with the bag. Rack inference helps - ~52% is a real edge - but knowing your opponent's leave every single turn only gets you to 53.3%. Going first beats perfect leave information! That took a while to believe.
 
 It's not that inference is useless. It's that Scrabble is more random than it feels when you're playing it. The bag keeps reshuffling your read away. We'll keep tuning τ, running more experiments, and see if the numbers move. But I'm not expecting a revelation - variance always wins.
 
