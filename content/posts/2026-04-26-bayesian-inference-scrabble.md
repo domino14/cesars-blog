@@ -3,7 +3,7 @@ title: "Bayesian Rack Inference in Macondo: Teaching a Scrabble Bot to Read Mind
 date: 2026-04-26
 tags: ["macondo", "scrabble", "AI", "bayesian", "machine learning", "statistics"]
 summary: "How we implemented mathematically rigorous Bayesian inference in Macondo to let BestBot reason about its opponent's rack, and why it only barely edges out going first."
-featured_image: '/images/bayes-nigel.jpg'
+featured_image: '/images/nigel-bayes.jpg'
 ---
 
 At the 2018 National Scrabble Championship in Buffalo, NY, the GOAT of all time Nigel Richards was playing against another top player and grandmaster Joel Sherman in a de-facto three-game finals for the $10K top prize. Joel needed to beat him 3 in a row to win the whole thing. In the second game (Joel won the first one), Joel opened with the rack of AENSTUU. He thought briefly before exchanging UU, his best play. Nigel had the rack AELNOQT and the commentators stated the obvious - play QAT for 24 points. There was no question in anyone's mind about this basically automatic play.
