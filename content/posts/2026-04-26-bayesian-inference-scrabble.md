@@ -428,6 +428,10 @@ Rack inference is the process of deducing what tiles your opponent is holding ba
 
 τ is the temperature of the softmax applied to log-odds win probabilities. Lower τ sharpens the distribution, assigning most weight to the move the opponent "should" have made. τ = 0.05 works well for near-optimal play; higher values are more forgiving of suboptimal choices. We're still investigating the optimal value.
 
+**What is a mini-sim?**
+
+A mini-sim is a fast Monte Carlo simulation. Macondo does hundreds of these, multi-threaded, during the inference step. The goal is to do around 200 2-ply iterations with many different rack leaves to see how far the opponent's best play is separated from the top play, and thus, when combined with the tau value, how likely a rational opponent is to have made that play given that they held that rack.
+
 **Why does knowing your opponent's exact leave only help 53.3%? And why does knowing their full rack each turn only get to ~62%?**
 
 Because Scrabble's bag randomizes so aggressively each turn. Even with perfect leave information, you can only act on it for one turn before both players draw new tiles. The full-rack oracle is more powerful (62%) - it sees all seven of your opponent's tiles each turn, not just what they kept - but it's still constrained by the same fundamental entropy: knowing your opponent's rack doesn't always mean you can do too much against it.
