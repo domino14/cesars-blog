@@ -124,7 +124,7 @@ Consider a setup play - a play that sets up a Q on your rack for a huge score ne
 
 The result is systematic bias. Static inference works fine when opponents play straightforwardly, but it fails exactly when the opponent is being clever. It can only "find" a setup by accident, if the setup happens to also score well. It can't represent the plays that require looking ahead.
 
-Win probability from simulation doesn't have this problem. A mini-sim runs out the game from a given rack and position. Setups show up as high-win% plays because the simulation sees the bingo or high scoring play on turn 2. Exchanges show up as high-win% plays when the leave is truly bad, taking into account the board position. The move the opponent actually made gets evaluated on the same scale as every alternative, and that scale is the right one.
+Win probability from simulation doesn't have this problem. A mini-sim runs out the game from a given rack and position. Setups show up as high-win% plays because the simulation sees the bingo or high scoring play on turn 2. Exchanges show up as high-win% plays when the leave is great, taking into account the board position. The move the opponent actually made gets evaluated on the same scale as every alternative, and that scale is the right one.
 
 That's what the current method uses, and why it produces better inference despite being slower.
 
