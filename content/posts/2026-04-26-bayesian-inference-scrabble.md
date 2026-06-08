@@ -187,7 +187,7 @@ func softmaxLikelihood(plays []*montecarlo.SimmedPlay, targetMove *move.Move,
 
 The `maxLogOdds` subtraction before `math.Exp` is a standard numerical stability trick – it prevents overflow without changing the result. τ = 0.05 is the default, tuned to assume near-optimal play. Lower τ sharpens the distribution (punishes suboptimal choices more), higher τ spreads weight more permissively.
 
-Why log-odds? Consider two moves with win probs of 0.51 and 0.53 vs. two moves at 0.70 and 0.90. Raw softmax treats the first pair as nearly identical and the second as dramatically different. But the first pair might reflect a genuinely close decision while the second might have compressed differences at the top end. Log-odds linearizes the scale properly.
+Why log-odds? The sigmoid compression problem shows up most clearly at the extremes. Consider two pairs of moves: one with win probs of 0.51 and 0.53, another with win probs of 0.95 and 0.97. Both pairs are separated by the same raw probability gap of 0.02, so raw softmax treats them identically. But they represent very different quality gaps. The first pair is 1.04:1 odds vs. 1.13:1 odds - a genuinely close call. The second pair is 19:1 odds vs. 32:1 odds - a huge quality difference that the sigmoid has compressed into a tiny slice near 1. Log-odds undoes that compression: logit(0.53) - logit(0.51) ≈ 0.08, while logit(0.97) - logit(0.95) ≈ 0.54. The same raw gap becomes 7x larger on the log-odds scale when it occurs near an extreme, which is exactly the right behavior. Equal differences in log-odds correspond to equal multiplicative differences in odds - and that's the right scale for comparing move quality.
 
 ## The Hypergeometric Prior
 
