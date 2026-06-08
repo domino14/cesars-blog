@@ -393,7 +393,7 @@ There's also a secondary rationality effect: BestBot isn't a perfectly determini
 
 ## What's Next
 
-We're still searching for the optimal τ. It likely varies by opponent – a player who always takes the highest-equity play is easier to infer against than one who plays more creatively. τ can also potentially adapt over the course of a game as you accumulate evidence about your opponent's style.
+We're still searching for the optimal τ. It likely varies by opponent – a player who always takes the BestBot-approved play is easier to infer against than one who plays more creatively. τ can also potentially adapt over the course of a game as you accumulate evidence about your opponent's style.
 
 Morris Greenberg suggested several promising directions for a more systematic τ search. The approach we've used so far is a coarse manual sweep; Morris proposed a proper grid search with finer resolution, evaluating each candidate τ on a held-out set of games to avoid overfitting to the BestBot matchup specifically. He also suggested a 2D search over τ and the mini-sim iteration count together, since the two parameters interact: a lower τ (sharper posterior) only works well if the mini-sims are precise enough to rank moves reliably, and cheap mini-sims may need a more forgiving τ to compensate for their noise. These ideas will shape the next round of experiments.
 
