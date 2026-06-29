@@ -1,0 +1,18 @@
+{{ $featured_image := partial "func/GetFeaturedImage.html" . }}
+<article class="bb b--black-10 h-100">
+  <div class="pv3 ph3 dark-gray">
+    {{ if $featured_image }}
+      <a href="{{.RelPermalink}}" class="db grow mb3">
+        <img src="{{ $featured_image }}" class="img w-100" alt="image from {{ .Title }}" style="height:160px;object-fit:cover;">
+      </a>
+    {{ end }}
+    <h1 class="f4 fw1 athelas mt0 lh-title">
+      <a href="{{.RelPermalink}}" class="color-inherit dim link">{{ .Title }}</a>
+    </h1>
+    <p class="f6 gray mt1 mb2">{{ time.Format "Jan 2, 2006" .Date }}</p>
+    <div class="f6 lh-copy nested-copy-line-height nested-links">
+      {{ .Summary }}
+    </div>
+    <a href="{{.RelPermalink}}" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">{{ $.Param "read_more_copy" | default (i18n "readMore") }}</a>
+  </div>
+</article>

@@ -3,9 +3,8 @@ date = "2020-05-30T05:14:32+00:00"
 draft = false
 tags = ["devjournal"]
 title = "Further progress on liwords"
+featured_image = "/images/b6b1cd974a8dc337d3c7951ed6eb849591199c12.pnj"
 +++
-
-![](/images/b6b1cd974a8dc337d3c7951ed6eb849591199c12.pnj)
 
 Our site is looking prettier now. My friend Conrad is doing the design for the site; the above is a very early version of what he’s already designed, and we have a team working to bring it to life. I’m mostly in charge of the backend, but doing a little front end work on the API. We finally got a full game timer working; I based the code mostly on lichess’s. Why not use a fully functional thing for inspiration?
 
