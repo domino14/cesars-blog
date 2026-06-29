@@ -1,6 +1,6 @@
 ---
 title: "About"
-
+type: "page"
 featured_image: '/images/kauai_terrace.jpg'
 
 menu:
