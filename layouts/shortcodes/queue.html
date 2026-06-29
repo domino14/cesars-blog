@@ -1,0 +1,55 @@
+{{/* Renders data/status.yaml as a grouped priority-queue table.
+     Usage: {{< queue >}}
+     Tachyons utility classes match the Ananke theme's bundled CSS. */}}
+
+{{ $statusColors := dict
+    "in progress" "bg-light-green"
+    "ongoing"     "bg-light-purple"
+    "queued"      "bg-light-yellow"
+    "idea"        "bg-light-blue"
+    "blocked"     "bg-washed-red"
+    "done"        "bg-near-white" }}
+
+<div class="overflow-auto">
+<table class="collapse w-100 ba b--moon-gray mv3 f6">
+  <thead>
+    <tr class="bg-near-white tl">
+      <th class="pa2 fw6">Item</th>
+      <th class="pa2 fw6 nowrap">Est.</th>
+      <th class="pa2 fw6">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range hugo.Data.status.projects }}
+    {{/* Project banner row */}}
+    <tr class="bg-near-white">
+      <td colspan="3" class="pa2 pt3 fw6 f5">
+        {{ if .url -}}
+          <a href="{{ .url }}" class="link dark-blue">{{ .name }}</a>
+        {{- else -}}
+          {{ .name }}
+        {{- end }}
+      </td>
+    </tr>
+    {{/* Item rows */}}
+    {{ range .items }}
+    {{ $color := index $statusColors .status | default "bg-near-white" }}
+    <tr class="bb b--moon-gray">
+      <td class="pa2 pl3">
+        {{ if .link -}}
+          <a href="{{ .link }}" class="link dark-blue underline-hover">{{ .item }}</a>
+        {{- else -}}
+          {{ .item }}
+        {{- end }}
+        {{ with .note }}<br><span class="f7 gray i">{{ . }}</span>{{ end }}
+      </td>
+      <td class="pa2 nowrap gray">{{ if .estimate }}{{ .estimate }}{{ else }}—{{ end }}</td>
+      <td class="pa2 nowrap">
+        <span class="ph2 pv1 br2 {{ $color }}">{{ .status }}</span>
+      </td>
+    </tr>
+    {{ end }}
+    {{ end }}
+  </tbody>
+</table>
+</div>

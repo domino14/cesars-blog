@@ -1,0 +1,117 @@
+# What I'm Working On — priority queue for cesardelsolar.com/status
+#
+# File order = priority order. To reprioritize: move the block, don't renumber.
+# status values: idea | queued | in progress | ongoing | blocked | done
+# Leave estimate blank and it renders as "—". Omit 'link' for private items.
+
+projects:
+
+  - name: "liwords / Woogles"
+    url: "https://github.com/woogles-io/liwords"
+    items:
+      - item: "Overhaul puzzles: searchable & filterable by tag"
+        status: "queued"
+        estimate: ""
+        note: "Depends on very recently merged Macondo code."
+        link: "https://github.com/woogles-io/liwords/issues/1706"
+
+      - item: "Add Slovene language support"
+        status: "queued"
+        estimate: ""
+        link: "https://github.com/woogles-io/liwords/issues/1845"
+
+      - item: "Upgrade all infra to latest versions (Postgres, NATS, Redis)"
+        status: "queued"
+        estimate: ""
+        note: "Requires building adjourn-game functionality first — there will be downtime."
+
+      - item: "Game architecture overhaul (Mikado method): remove game caches, port referee logic, decouple from Macondo"
+        status: "in progress"
+        estimate: ""
+        note: "Using the Mikado refactoring method to untangle a large dependency graph. End goal: zero-downtime deploys, finished games on S3, and a new pkg/game/ that owns the referee logic without pulling in Macondo at runtime."
+
+      - item: "Broadcast: add player records to OBS URL options"
+        status: "queued"
+        estimate: ""
+        link: "https://github.com/woogles-io/liwords/issues/1855"
+
+      - item: "Broadcast: native Woogles tournament mode"
+        status: "queued"
+        estimate: ""
+        link: "https://github.com/woogles-io/liwords/issues/1856"
+
+      - item: "Broadcast: more broadcast slot types"
+        status: "queued"
+        estimate: ""
+        link: "https://github.com/woogles-io/liwords/issues/1857"
+
+      - item: "In-browser turn-by-turn game analysis"
+        status: "queued"
+        estimate: ""
+        note: "No WASM for now — reuse the existing analysis infrastructure."
+
+      - item: "Move stored analyses off to S3"
+        status: "queued"
+        estimate: ""
+
+      - item: "Many smaller liwords issues"
+        status: "ongoing"
+        estimate: ""
+        note: "Each is smallish but they add up."
+        link: "https://github.com/woogles-io/liwords/issues"
+
+  - name: "Macondo"
+    url: "https://github.com/domino14/macondo"
+    items:
+      - item: "Add Swedish lexicon and letter distribution"
+        status: "queued"
+        estimate: ""
+        note: "Requires changes to word-golib (the shared lexicon library). Slovene will too."
+        link: "https://github.com/domino14/macondo/issues/491"
+
+      - item: "Fix unrecognized-lexicon-prefix errors in word-golib"
+        status: "queued"
+        estimate: ""
+        link: "https://github.com/domino14/macondo/issues/496"
+
+      - item: "Improve Bayesian inference: search for best softmax temperature τ, more experiments"
+        status: "in progress"
+        estimate: ""
+
+      - item: "Next-gen static evaluator: self-play data collection, better training algorithm (Q-learning?), retrain CNN, eventual NNUE conversion"
+        status: "idea"
+        estimate: ""
+
+      - item: "Add a GUI"
+        status: "idea"
+        estimate: ""
+        link: "https://github.com/domino14/macondo/issues/35"
+
+  - name: "Aerolith / WordVault"
+    url: "https://github.com/domino14/webolith"
+    items:
+      - item: "WordVault performance pass"
+        status: "queued"
+        estimate: ""
+        note: "Untouched ~2 years and slowing down. Need to speed up queries and rethink how much guess data we retain. Will bite us soon."
+
+      - item: "New Wordwalls modes (infinite word walls, Tetrolith, …)"
+        status: "idea"
+        estimate: ""
+
+  - name: "ESB — Electronic Scrabble Board"
+    items:
+      - item: "Design and prototype the Electronic Scrabble Board"
+        status: "idea"
+        estimate: "~1 year"
+        note: "Hardware project in ideation / pre-prototype phase. A real commitment — due within the year."
+
+  - name: "Other / private"
+    items:
+      - item: "Collab project: game review form, video support, more puzzle modes"
+        status: "queued"
+        estimate: ""
+
+      - item: "Collab project: Quadrangles mode"
+        status: "idea"
+        estimate: ""

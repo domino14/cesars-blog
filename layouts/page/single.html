@@ -11,9 +11,9 @@
           {{ .Title }}
         </h1>
       </header>
-      {{ with .Params.lastmod }}
-      <p>Last Updated: {{ .Format "January 2, 2006" }}</p>
-        {{ else }}
+      {{ if ne .Lastmod .Date }}
+      <p>Last Updated: {{ .Lastmod.Format "January 2, 2006" }}</p>
+      {{ else }}
       <p>Published: {{ .Date.Format "January 2, 2006" }}</p>
       {{ end }}
       <div class="nested-copy-line-height lh-copy f4 nested-links {{ $.Param "text_color" | default "mid-gray" }}">
