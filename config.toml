@@ -1,5 +1,5 @@
 baseurl = "https://www.cesardelsolar.com"
-languageCode = "en-us"
+locale = "en-us"
 title = "César Del Solar, Maker of Things"
 disqusShortname = "https-www-cesardelsolar-com"
 enableRobotsTXT = true
