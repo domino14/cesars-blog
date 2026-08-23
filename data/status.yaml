@@ -96,7 +96,11 @@ projects:
         estimate: ""
         note: "Untouched ~2 years and slowing down. Need to speed up queries and rethink how much guess data we retain. Will bite us soon."
 
-      - item: "New Wordwalls modes (infinite word walls, Tetrolith, …)"
+      - item: "Infinite Wall mode: various bug fixes"
+        status: "queued"
+        estimate: ""
+
+      - item: "New Wordwalls modes (Tetrolith, …)"
         status: "idea"
         estimate: ""
 

@@ -136,8 +136,9 @@ about two years. It's slowing down – queries are getting sluggish, and I need 
 how much guess history we're retaining. This isn't a feature; it's a reliability issue
 that needs a pass before it bites harder.
 
-Beyond that, I have ideas for new Wordwalls modes – infinite word walls, a Tetris-inspired
-"Tetrolith" variant, and a few others. These are in the idea stage.
+**Infinite Wall** mode is out, and it has accumulated a list of bugs that need a cleanup
+pass. Beyond that, I have ideas for other new Wordwalls modes – a Tetris-inspired
+"Tetrolith" variant among them. Those are still in the idea stage.
 
 Repos: [domino14/webolith](https://github.com/domino14/webolith) ·
 [domino14/word_db_server](https://github.com/domino14/word_db_server) ·
