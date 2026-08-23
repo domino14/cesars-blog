@@ -3,6 +3,7 @@
 # File order = priority order. To reprioritize: move the block, don't renumber.
 # status values: idea | queued | in progress | ongoing | blocked | done
 # Leave estimate blank and it renders as "—". Omit 'link' for private items.
+# Items marked 'done' stay visible for one cycle, then get pruned on the next update.
 
 projects:
 
@@ -16,7 +17,7 @@ projects:
         link: "https://github.com/woogles-io/liwords/issues/1706"
 
       - item: "Add Slovene language support"
-        status: "queued"
+        status: "done"
         estimate: ""
         link: "https://github.com/woogles-io/liwords/issues/1845"
 
@@ -31,7 +32,7 @@ projects:
         note: "Using the Mikado refactoring method to untangle a large dependency graph. End goal: zero-downtime deploys, finished games on S3, and a new pkg/game/ that owns the referee logic without pulling in Macondo at runtime."
 
       - item: "Broadcast: add player records to OBS URL options"
-        status: "queued"
+        status: "done"
         estimate: ""
         link: "https://github.com/woogles-io/liwords/issues/1855"
 
@@ -66,11 +67,11 @@ projects:
       - item: "Add Swedish lexicon and letter distribution"
         status: "queued"
         estimate: ""
-        note: "Requires changes to word-golib (the shared lexicon library). Slovene will too."
+        note: "Requires changes to word-golib (the shared lexicon library), like Slovene did."
         link: "https://github.com/domino14/macondo/issues/491"
 
       - item: "Fix unrecognized-lexicon-prefix errors in word-golib"
-        status: "queued"
+        status: "done"
         estimate: ""
         link: "https://github.com/domino14/macondo/issues/496"
 
