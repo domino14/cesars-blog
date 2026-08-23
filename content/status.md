@@ -10,9 +10,11 @@ menu:
     weight: 2
 ---
 
-I'm a husband and father of two young kids. I've spent the past few years co-founding a
-startup, which means my open-source side projects get whatever scraps of attention I can
-carve out during evenings and weekends – but the backlog isn't getting shorter.
+I'm a husband and father of two young kids. I spent the past few years co-founding a
+startup, and I now have a day job building voice AI agents at a large enterprise software
+company. Either way it's a full plate, so my open-source side projects get whatever scraps
+of attention I can carve out during evenings and weekends – but the backlog isn't getting
+shorter.
 
 I maintain several projects and there's always something I "owe" someone: a bug fix, a
 feature, an enhancement. This page exists for two reasons:
