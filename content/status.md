@@ -2,7 +2,7 @@
 title: "What I'm Working On"
 type: "page"
 date: 2026-06-29
-lastmod: 2026-06-29
+lastmod: 2026-08-23
 description: "A living priority queue of what I'm building across my open-source projects – and why your feature request might be taking a while."
 featured_image: '/images/devschedule.png'
 menu:
@@ -10,9 +10,11 @@ menu:
     weight: 2
 ---
 
-I'm a husband and father of two young kids. I've spent the past few years co-founding a
-startup, which means my open-source side projects get whatever scraps of attention I can
-carve out during evenings and weekends – but the backlog isn't getting shorter.
+I'm a husband and father of two young kids. I spent the past few years co-founding a
+startup, and I now have a day job building voice AI agents at a large enterprise software
+company. Either way it's a full plate, so my open-source side projects get whatever scraps
+of attention I can carve out during evenings and weekends – but the backlog isn't getting
+shorter.
 
 I maintain several projects and there's always something I "owe" someone: a bug fix, a
 feature, an enhancement. This page exists for two reasons:
@@ -56,10 +58,10 @@ This is the most active project right now. The main threads:
 structured search. Overhauling this depends on code I very recently merged into Macondo,
 so it's unblocked and near the top of the queue. ([#1706](https://github.com/woogles-io/liwords/issues/1706))
 
-**New languages.** Adding Slovene ([#1845](https://github.com/woogles-io/liwords/issues/1845))
-is on the list. New languages also require changes to
+**New languages.** Slovene ([#1845](https://github.com/woogles-io/liwords/issues/1845))
+is done. New languages also require changes to
 [word-golib](https://github.com/domino14/word-golib), the shared lexicon library I maintain
-that both Macondo and liwords depend on.
+that both Macondo and liwords depend on — so each one lands in two repos.
 
 **Infrastructure upgrade.** Postgres, NATS, and Redis all need updating to current versions.
 The catch: any serious upgrade means downtime, and downtime means I need to ship adjourn-game
@@ -68,9 +70,10 @@ that feature.
 
 **Game architecture overhaul.** This is a large refactor being organized using the [Mikado method](https://mikadomethod.info/) – a technique for untangling complex dependency graphs where you try a change, note what breaks, back it out, fix the prerequisite, and repeat until the path is clear. The goals: remove the in-process game cache (which currently forces hard-cutover deploys and blocks running more than one API node), port the referee/game-rules logic into a new `pkg/game/` package inside liwords, and drop Macondo as a liwords runtime dependency. Finished games would also move to S3, keeping the database lean. Some of this is already in flight.
 
-**Broadcast features.** Three open issues for improving the broadcasting/OBS integration:
-player records ([#1855](https://github.com/woogles-io/liwords/issues/1855)),
-native tournament mode ([#1856](https://github.com/woogles-io/liwords/issues/1856)),
+**Broadcast features.** Player records in the OBS URL options
+([#1855](https://github.com/woogles-io/liwords/issues/1855)) is shipped. Two issues remain
+for the broadcasting/OBS integration:
+native tournament mode ([#1856](https://github.com/woogles-io/liwords/issues/1856))
 and more slot types ([#1857](https://github.com/woogles-io/liwords/issues/1857)).
 
 **Analysis.** Two related items: allowing players to analyze a game in the browser turn by
@@ -89,11 +92,11 @@ generator, equity calculator, endgame solver, and bot. It powers analysis and bo
 Woogles and is probably the strongest open-source engine for this class of game.
 
 **New lexicons.** Adding Swedish ([#491](https://github.com/domino14/macondo/issues/491))
-is the concrete next item. This, and the upcoming Slovene support in liwords, both require
-changes to [word-golib](https://github.com/domino14/word-golib) (the shared library for
-lexicon data and letter distributions). There's also a bug in word-golib where lexicons
-with unrecognized prefixes throw errors instead of being handled gracefully –
-[#496](https://github.com/domino14/macondo/issues/496) covers that.
+is the concrete next item. It requires changes to
+[word-golib](https://github.com/domino14/word-golib) (the shared library for lexicon data
+and letter distributions), the same way Slovene did. The word-golib bug where lexicons with
+unrecognized prefixes threw errors instead of being handled gracefully
+([#496](https://github.com/domino14/macondo/issues/496)) is fixed.
 
 **Bayesian inference.** I've been doing research into improving the inference module –
 searching mathematically for the best value of τ (the softmax temperature that controls how
@@ -135,8 +138,9 @@ about two years. It's slowing down – queries are getting sluggish, and I need 
 how much guess history we're retaining. This isn't a feature; it's a reliability issue
 that needs a pass before it bites harder.
 
-Beyond that, I have ideas for new Wordwalls modes – infinite word walls, a Tetris-inspired
-"Tetrolith" variant, and a few others. These are in the idea stage.
+**Infinite Wall** mode is out, and it has accumulated a list of bugs that need a cleanup
+pass. Beyond that, I have ideas for other new Wordwalls modes – a Tetris-inspired
+"Tetrolith" variant among them. Those are still in the idea stage.
 
 Repos: [domino14/webolith](https://github.com/domino14/webolith) ·
 [domino14/word_db_server](https://github.com/domino14/word_db_server) ·
@@ -162,5 +166,5 @@ It competes for the same hours as the open-source work, which is part of why
 
 ---
 
-*Last updated: June 29, 2026. This page's source is in
+*Last updated: August 23, 2026. This page's source is in
 [github.com/domino14/cesars-blog](https://github.com/domino14/cesars-blog).*
